@@ -3,5 +3,68 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "my-lodash-lib": {
+      "projectType": "library",
+      "root": "projects/my-lodash-lib",
+      "sourceRoot": "projects/my-lodash-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/my-lodash-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/my-lodash-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/my-lodash-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/my-lodash-lib/src/test.ts",
+            "tsConfig": "projects/my-lodash-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/my-lodash-lib/karma.conf.js"
+          }
+        }
+      }
+    },
+    "my-shared-components-lib": {
+      "projectType": "library",
+      "root": "projects/my-shared-components-lib",
+      "sourceRoot": "projects/my-shared-components-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/my-shared-components-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/my-shared-components-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/my-shared-components-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/my-shared-components-lib/src/test.ts",
+            "tsConfig": "projects/my-shared-components-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/my-shared-components-lib/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "my-lodash-lib"
 }

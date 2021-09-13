@@ -11,15 +11,23 @@
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "my-lodash-lib": [
+        "dist/my-lodash-lib/my-lodash-lib",
+        "dist/my-lodash-lib"
+      ],
+      "my-shared-components-lib": [
+        "dist/my-shared-components-lib/my-shared-components-lib",
+        "dist/my-shared-components-lib"
+      ]
+    },
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ]
+    "lib": ["es2018", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
